@@ -1,14 +1,14 @@
 import React from 'react';
 import Logo from './Logo';
-import Menu from './Menu';
+import TopbarMenu from './TopbarMenu';
 import DrawerButton from './DrawerButton';
 
 const Topbar = () => {
     return (
-        <div className="top-bar">
+        <div className="topbar">
             <DrawerButton />
             <Logo />
-            <Menu />
+            <TopbarMenu />
         </div>
     )
 }

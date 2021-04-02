@@ -1,11 +1,19 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
+import { OPEN_DRAWER } from '../../redux/actionTypes';
+import { stateInterface } from '../../interface/stateInterface';
 
 const Menu = () => {
     const dispatch = useDispatch();
+    const openDrawer = useSelector((state: stateInterface) => state.topbarReducer.openDrawer);
     const loadPage = (page: string) => {
         dispatch(push(`/${page}`));
+        
+        /* for drawer-menu */
+        if(openDrawer){
+            dispatch({type: OPEN_DRAWER}) 
+        }
     }
 
     return (

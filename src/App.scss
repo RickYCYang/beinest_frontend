@@ -48,6 +48,11 @@ html{
   animation-duration: 1s;
 }
 
+.drawer-menu {
+  display: none;
+}
+
+
 @keyframes slidein {
   from {
     margin-right: 100%;
@@ -59,8 +64,7 @@ html{
 }
 
 
-
-.top-bar {
+.topbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -71,29 +75,28 @@ html{
   border-bottom: 1.5px solid #FDE3E7;
   background-color: white;
   box-shadow:3px 3px 5px lightgray;
+}
 
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-family: 'cwTeXYen', 'Indie Flower', cursive;;
+}
+li {
+  padding-top: 50px;  
+  margin-right: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
 
-  .menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      list-style-type: none;
-      font-size: 1.2rem;
-      font-family: 'cwTeXYen', 'Indie Flower', cursive;;
-    }
-    li {
-      padding-top: 50px;  
-      margin-right: 20px;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-
-    li:hover {
-      color: #FFA4C7;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
+li:hover {
+  color: #FFA4C7;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .logo-area {
@@ -124,7 +127,7 @@ html{
 }
 
 @media (max-width: 820px) {
-  .navbar {
+  .topbar-menu {
     display: none;
   }
 
@@ -133,5 +136,27 @@ html{
     position: relative;
     left: 0;
   }
+
+  .drawer-menu {
+    display: inline;
+  }
+
+
+  .drawer-menu .menu {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .drawer-menu .menu li {
+    width: 80%;
+    border-bottom: 1.5px solid #FDE3E7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3%;
+  }
+
 
 }
