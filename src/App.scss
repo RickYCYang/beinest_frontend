@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@font-face {
+  font-family: 'cwTeXYen';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.ttf) format('truetype');
+}
+@import '~@material/react-material-icon/dist/material-icon.css';
+
+$theme-color:#FDE3E7;
+$topbar-height: 70px;
+
+.material-icons{
+  color: $theme-color;
+  font-size: 40px;
+}
+
+html{
+  font-size:16px;
+  body{
+    background-color: #F9F9F9;
+  }
+}
+
+
+#drawer-button {
+  display: none;
+  border-radius: 50% 50%;
+  border: 1.5px solid $theme-color;
+  margin-left: 50px;
+}
+
+#drawer-bar {
+  position: fixed;
+  top: $topbar-height;
+  background-color: white;
+  border: 1.5px solid $theme-color;
+  box-shadow:3px 3px 9px lightgray;
+  height: 100%;
+  z-index: 2;
+  width: 100%;
+  transition: 1s;
+  animation-name: slidein;
+  animation-duration: 1s;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 0%
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+
+
+.top-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: $topbar-height;
+  position: sticky;
+  top: 0px;
+  border-bottom: 1.5px solid #FDE3E7;
+  background-color: white;
+  box-shadow:3px 3px 5px lightgray;
+
+
+  .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      font-size: 1.2rem;
+      font-family: 'cwTeXYen', 'Indie Flower', cursive;;
+    }
+    li {
+      padding-top: 50px;  
+      margin-right: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    li:hover {
+      color: #FFA4C7;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+}
+
+.logo-area {
+  background-color: white;
+  max-height: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-sizing: border-box;
+}
+
+.logo {
+  max-width: auto;
+  max-height: 80px;
+  cursor: pointer;
+}
+
+#store-title {
+  font-size: 2rem;
+  margin-left: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: 'Indie Flower', cursive;
+}
+
+.home {
+  height: 2000px;
+  background-color: #FAFAFA;
+}
+
+@media (max-width: 820px) {
+  .navbar {
+    display: none;
+  }
+
+  #drawer-button {
+    display: inline;
+    position: relative;
+    left: 0;
+  }
+
+}
