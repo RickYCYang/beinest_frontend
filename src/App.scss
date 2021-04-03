@@ -26,6 +26,44 @@ html{
   }
 }
 
+@mixin container($align) {
+  width: 80%;
+  display: flex;
+  justify-content: $align;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 900px;
+}
+
+.container-center {
+  @include container(center);
+}
+
+#footer {
+  width: 100%;
+  border: 1.5px solid $theme-color;
+  box-shadow:9px 9px 9px 9px lightgray;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFA4C7;
+  background-color: white;
+  font-weight: bold;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 
 #drawer-button {
   display: none;
@@ -118,7 +156,13 @@ li:hover {
   margin-left: 20px;
   box-sizing: border-box;
   cursor: pointer;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Indie Flower';
+}
+
+.page-title {
+  font-size: 2rem;
+  box-sizing: border-box;
+  font-family: 'Indie Flower';
 }
 
 .home {
@@ -127,6 +171,15 @@ li:hover {
 }
 
 @media (max-width: 820px) {
+  #footer {
+    display: none;
+  }
+
+  #store-title {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
   .topbar-menu {
     display: none;
   }
@@ -157,6 +210,10 @@ li:hover {
     margin: 0 auto;
     padding: 3%;
   }
+}
 
-
+@media(max-width: 335px) {
+  #store-title {
+    display: none;
+  }
 }

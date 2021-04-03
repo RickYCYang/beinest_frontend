@@ -7,6 +7,7 @@ import './App.scss';
 
 import Home from './view/Home';
 import Drawer from './view/Drawer';
+import Footer from './view/Components/Footer';
 import About from './view/About/About'
 import Topbar from './view/Topbar/Topbar';
 import Portfolio from './view/Portfolio/Portfolio';
@@ -47,6 +48,7 @@ function App() {
           </Route>
       </Switch>
       </ConnectedRouter>
+      <Footer />
     </Provider>
   );
 }
