@@ -1,11 +1,12 @@
 import React from 'react';
+import SocialLinkMenu from './SocialLinkMenu';
 
 const Footer = () => {
     return (
         <div id='footer'>
             <div style={{flex: 1, textAlign: 'center'}}> 
-                <p>IG FB</p>
-                <p>Copyright © 2021 Beinest. All rights reserved.</p>
+                <SocialLinkMenu />
+                <p>Copyright © 2021 Bei's nest. All rights reserved.</p>
             </div>
         </div>
     );

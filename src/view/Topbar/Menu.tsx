@@ -19,10 +19,11 @@ const Menu = () => {
     return (
         <nav className="navbar">
             <ul className="menu">
-                <li onClick={() => loadPage("portfolio/1")}>多根自然款</li>
-                <li onClick={() => loadPage("portfolio/2")}>自然開花款</li>
-                <li onClick={() => loadPage("portfolio/3")}>臉部 Spa</li>
-                <li onClick={() => loadPage("about")}>關於 Beinest</li>
+                <li onClick={() => loadPage("portfolio/nest-single")}>單根嫁接</li>
+                <li onClick={() => loadPage("portfolio/nest-multiple")}>多根嫁接</li>
+                <li onClick={() => loadPage("portfolio/acne")}>無痛粉刺</li>
+                <li onClick={() => loadPage("portfolio/face-spa")}>臉部保養</li>
+                <li onClick={() => loadPage("about")}>關於 BEI'S NEST</li>
             </ul>
         </nav>
     )

@@ -5,12 +5,11 @@ import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './redux/configureStore';
 import './App.scss';
 
-import Home from './view/Home';
-import Drawer from './view/Drawer';
+import Drawer from './view/Components/Drawer';
 import Footer from './view/Components/Footer';
 import About from './view/About/About'
 import Topbar from './view/Topbar/Topbar';
-import Portfolio from './view/Portfolio/Portfolio';
+import PortfolioList from './view/Portfolio/PortfolioList';
 
 
 const store = configureStore({});
@@ -23,24 +22,14 @@ function App() {
       <ConnectedRouter history = {history} >
       <Switch>
           <Route exact path="/">
-              <Home /> 
+              <PortfolioList /> 
           </Route>
-          <Route exact path="/catg1">
-              <Home /> 
-          </Route>
-          <Route exact path="/catg2">
-              <Home /> 
+          <Route exact path="/portfolio/:category">
+              <PortfolioList /> 
           </Route>
           <Route exact path="/about">
               <About /> 
           </Route>
-          <Route exact path="/portfolio">
-              <Portfolio /> 
-          </Route>
-          <Route exact path="/portfolio/:category">
-              <Portfolio /> 
-          </Route>
-          <Route path="/:id" children={<Home  />} />
           <Route exact path="*">
             <div>
               <h1>Sorry, No this page</h1>
