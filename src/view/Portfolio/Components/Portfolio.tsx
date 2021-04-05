@@ -14,7 +14,7 @@ const Portfolio = () => {
         
         <Card>
             <CardPrimaryContent>
-                <h1>Header</h1>
+                <h5>Header</h5>
                 <CardMedia square imageUrl={require('../../../images/logo.png')} />   
             </CardPrimaryContent>
 
