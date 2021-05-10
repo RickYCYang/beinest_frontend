@@ -1,0 +1,23 @@
+#footer {
+    width: 100%;
+    border: 1.5px solid $theme-color;
+    box-shadow:9px 9px 9px 9px lightgray;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $theme-font-color;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* iPad (768px) */
+@media (max-width: 768px) {
+    #footer {
+      display: none;
+    }
+}

@@ -1,14 +1,21 @@
 import React from 'react';
 
-const Container = (props: any) => {
-    const children = props.children;
-    let align = props.align;
-    if (['center', 'left', 'right'].indexOf(align) < 0) {
-        align = 'center';
+interface props {
+    children : any,
+    align?: string
+}
+
+const Container = (props: props) => {
+    let {children, align} = props;
+    //let align = props.align;
+    if(align){
+        if (['center', 'left', 'right'].indexOf(align) < 0) {
+            align = 'center';
+        }
     }
     return (
         <div className={`container-${align}`}>
-            <div style={{width: '100%'}}>
+            <div style={{width: '100%', paddingTop: '30px'}}>
                 {children}
             </div>
         </div>

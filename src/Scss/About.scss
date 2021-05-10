@@ -1,0 +1,75 @@
+.about-content-info {
+    width: 48%;
+    margin: 0 1% 0 1%; //top right bottom left
+    padding-top: 20px;
+    min-height: 500px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: 3px solid $theme-color;
+    background-color: white;
+    box-shadow:3px 3px 9px lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: 'cwTeXYen', 'Indie Flower';
+  
+    .title {
+      font-weight: bold;
+      text-align: center;
+      width: 90%;
+      border-bottom: 2px solid $theme-color;
+    }
+  
+    ul {
+      width: 90%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      list-style: none;
+    }
+  
+    ul li::before {
+      content: "\2022";
+      color: $theme-font-color;
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
+  
+    iframe {
+      border-radius: 10px;
+      border: 2px solid $theme-color;
+    }
+  }
+
+  .about-logo {
+    background-color: white;
+    border-radius: 50%;
+    border-color: $theme-color;
+    border-style: solid;
+    box-shadow: 3px 3px 9px lightgray;
+    margin: 20px;
+  }
+
+  /* iPad (768px) */
+@media (max-width: 768px) {
+
+    .about-content-info {
+      width: 98%;
+      margin: 1%;
+    }
+
+    .about-content-info {
+        min-height: 370px;
+        margin-bottom: 2%;
+    }
+    
+    #about-address {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

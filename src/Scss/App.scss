@@ -1,0 +1,118 @@
+$theme-color:#FDE3E7;
+$theme-font-color:  #FFA4C7;
+$topbar-height: 70px;
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import '~@material/react-card/dist/card.css';
+@import './Portfolio.scss';
+@import './Footer.scss';
+@import './About.scss';
+@import './Drawer.scss';
+@import './Topbar.scss';
+
+@font-face {
+  font-family: 'cwTeXYen';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.ttf) format('truetype');
+}
+@import '~@material/react-material-icon/dist/material-icon.css';
+
+$theme-color:#FDE3E7;
+$theme-font-color:  #FFA4C7;
+$topbar-height: 70px;
+
+.material-icons{
+  color: $theme-color;
+  font-size: 40px;
+}
+
+html{
+  font-size:16px;
+  body{
+    background-color: #F9F9F9;
+  }
+}
+
+@mixin container($align) {
+  width: 80%;
+  display: flex;
+  justify-content: $align;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 800px;
+  padding-bottom: 200px;
+}
+
+.container-center {
+  @include container(center);
+}
+
+
+
+.flex-container-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  img {
+    display: block;
+  }
+}
+
+.flex-container-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+
+.container-content-center {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.social-link-menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.social-link-icon {
+  max-width: 30px; 
+  height: auto;
+  margin-right: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+img {
+  max-height: 100%;
+}
+
+
+/* iPad (768px) */
+@media (max-width: 768px) {
+
+  .container-content-center {
+    flex-direction: column;
+  }
+
+  .social-link-icon {
+    margin: 0 10px 0 10px;
+  }
+}
+

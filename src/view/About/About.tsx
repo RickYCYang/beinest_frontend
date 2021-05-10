@@ -2,18 +2,14 @@ import React from 'react';
 import Container from '../Components/Container';
 import MapContent from './Components/MapContent'
 import Content from './Components/Content';
-
-
-const background = require('../../images/logo.png');
+import Logo from './Components/Logo'
 
 const About = () => {
+    console.log('render about');
     return (
         <Container align={'center'}>
             <div className='flex-container-column'>
-                <img 
-                    src={background} 
-                    alt='logo'
-                />
+                <Logo/>
                 <div className='container-content-center'>
                     <Content />
                     <MapContent />
@@ -21,6 +17,6 @@ const About = () => {
             </div>
         </Container>
     )
-}
+};
 
 export default About;

@@ -1,0 +1,70 @@
+.portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  
+    .portfolio-content {
+      background-color: white;
+      box-shadow: 3px 3px 5px lightgray;
+      border-radius: 10px;
+      width: 80%;
+      height: 400px;
+      margin: 2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'cwTeXYen', 'Indie Flower';
+      font-size: 1.5rem;
+      padding: 20px;
+  
+  
+      .portfolio-photo {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      iframe {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+  
+        html {
+          max-height: 100%;
+  
+          img {
+            max-height: 100%;
+          }
+        }
+      }    
+    }
+  }
+
+  .portfolio-card {
+    width: 23%;
+    margin: 1%;
+    display: inline-block;
+  
+    .portfolio-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'cwTeXYen', 'Indie Flower';
+      font-size: 1.5rem;
+      padding: 20px;
+    }
+  
+    .mdc-card__media {
+      max-height: 300px;
+      width: auto;
+    }
+  }
+  
+
+/* iPad (768px) */
+@media (max-width: 768px) {
+    .portfolio-card {
+        width: 48%;
+        margin: 1%;
+    }
+}

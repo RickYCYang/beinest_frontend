@@ -1,6 +1,8 @@
 import {topbarState} from './topbarInterface';
+import {portfolioState} from './portfolioInterface'
 
 export interface stateInterface {
-    topbarReducer: topbarState
+    topbarReducer: topbarState,
+    portfolioReducer: portfolioState
 }
 

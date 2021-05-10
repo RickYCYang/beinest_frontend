@@ -1,0 +1,89 @@
+
+
+.topbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: $topbar-height;
+    position: sticky;
+    top: 0px;
+    border-bottom: 1.5px solid #FDE3E7;
+    background-color: white;
+    z-index: 1;
+    box-shadow:3px 3px 5px lightgray;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-family: 'cwTeXYen', 'Indie Flower';
+  
+    li {
+      padding-top: 50px;  
+      margin-right: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    
+    li:hover {
+      color: $theme-font-color;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-bottom: 2px solid $theme-font-color;
+    }
+  
+    li:active {
+      color: $theme-font-color;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-bottom: 2px solid $theme-font-color;
+    }
+  }
+  
+  .logo-area {
+    background-color: white;
+    max-height: 100%;
+    margin-left: 50px;
+    margin-right: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    max-width: auto;
+    max-height: 50px;
+    cursor: pointer;
+  }
+  
+  #store-title {
+    font-size: 2rem;
+    margin-left: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: 'cwTeXYen', 'Indie Flower';
+  }
+
+  @media(max-width: 335px) {
+    #store-title {
+      display: none;
+    }
+  }
+  
+/* iPad (768px) */
+@media (max-width: 768px) {
+    #store-title {
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+
+    .topbar-menu {
+        display: none;
+    }
+}    
