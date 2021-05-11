@@ -11,10 +11,19 @@ interface ParamTypes {
 };
 
 const PortfolioPage = () => {
+    const dispatch = useDispatch();
     let {category} = useParams<ParamTypes>(); 
     const portfolioList: portfolioState["portfolioList"] = useSelector((state: stateInterface) => state.portfolioReducer.portfolioList);
-    const dispatch = useDispatch();
     
+    let filterPortolioList;
+    if(category === 'acne'){
+        filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') > 0)
+    }
+    else{
+        filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') < 0)
+    }
+    console.log('filterPortolioList', filterPortolioList);
+
     useEffect((): void => {
         dispatch({type: GET_PORTFOLIO_REQUEST})
     }, []);
@@ -22,7 +31,7 @@ const PortfolioPage = () => {
     return(
         <PortfolioList 
             category = {category}
-            portfolioList = {portfolioList}
+            portfolioList = {filterPortolioList}
         />
     );
 }

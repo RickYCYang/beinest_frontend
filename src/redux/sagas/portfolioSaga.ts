@@ -16,6 +16,7 @@ export function* getPortfolioRequest(action: any){
     const response: response = yield axiosGet('portfolio/', {});
     console.log('response', response);
     if(response.status === 200){
+      console.log('response.data', response.data)
       yield put({
         type: GET_PORTFOLIO_SUCCESS,
         portfolioList: response.data

@@ -15,10 +15,8 @@ interface propsType {
 const PortfolioCard = (props: propsType) => {
     const dispatch = useDispatch();
     const {portfolio} = props;
-    console.log(portfolio)
 
     const loadPortfolioPage = () => {
-        console.log('loadPortfolioPage');
         dispatch(push(`/portfolio/1`));
     }
 
@@ -26,15 +24,24 @@ const PortfolioCard = (props: propsType) => {
     <div className='portfolio-card'>        
         <Card>
             <CardPrimaryContent>
-                <CardMedia 
-                    square 
-                    imageUrl={portfolio.mediaUrl} 
-                    onClick={loadPortfolioPage}
-                />   
+                {portfolio.mediaType === 'IMAGE' ? (
+                    <CardMedia 
+                        square 
+                        imageUrl={portfolio.mediaUrl} 
+                        onClick={loadPortfolioPage}
+                    />   
+                ):(
+                    <iframe 
+                        src={portfolio.mediaUrl} 
+                        style={{height: '300px', backgroundColor: 'white'}}
+                    />
+                )
+                }
+                
             </CardPrimaryContent>
             <CardPrimaryContent>
                 <div className='portfolio-card-header' onClick={loadPortfolioPage}>
-                    {portfolio.caption}
+                    <strong style={{color: 'darkgray'}}>Bei's nest</strong>
                 </div>
             </CardPrimaryContent>
         </Card>
