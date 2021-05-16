@@ -14,7 +14,7 @@ const CarouselBanner = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={banner1}
+                    src={banner2}
                     alt="First slide"
                     style={{height: '350px'}}
                 />
@@ -26,7 +26,7 @@ const CarouselBanner = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={banner2}
+                    src={banner1}
                     alt="Second slide"
                     style={{width: '800px', height: '350px'}}
                 />
