@@ -52,7 +52,14 @@
     border-color: $theme-color;
     border-style: solid;
     box-shadow: 3px 3px 9px lightgray;
-    margin: 20px;
+    margin: 10px;
+    max-width: 100px;
+    max-height: auto;
+
+    img {
+      max-width: 100%;
+      max-height: auto;
+    }
   }
 
   /* iPad (768px) */

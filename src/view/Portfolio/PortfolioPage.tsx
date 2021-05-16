@@ -10,20 +10,31 @@ interface ParamTypes {
     category: string
 };
 
-const PortfolioPage = () => {
+interface PropsTypes {
+    showPostNumber?: number
+}
+
+const PortfolioPage = (props: PropsTypes) => {
     const dispatch = useDispatch();
+    const {showPostNumber} = props;
     let {category} = useParams<ParamTypes>(); 
     const portfolioList: portfolioState["portfolioList"] = useSelector((state: stateInterface) => state.portfolioReducer.portfolioList);
     
-    let filterPortolioList;
+    let filterPortolioList = [];
     if(category === 'acne'){
         filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') > 0)
     }
-    else{
+    else if(category ==='all'){
+        filterPortolioList = portfolioList;
+    }
+    else {
         filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') < 0)
     }
-    console.log('filterPortolioList', filterPortolioList);
-
+    console.log('showPostNumber', showPostNumber);
+    if(showPostNumber !== undefined && showPostNumber > 0){
+        filterPortolioList = filterPortolioList.slice(0, 8)
+    }
+    
     useEffect((): void => {
         dispatch({type: GET_PORTFOLIO_REQUEST})
     }, []);

@@ -8,7 +8,7 @@ const About = () => {
     console.log('render about');
     return (
         <Container align={'center'}>
-            <div className='flex-container-column'>
+            <div className='flex-container-column' style={{paddingTop: '10px'}}>
                 <Logo/>
                 <div className='container-content-center'>
                     <Content />

@@ -59,6 +59,70 @@
       width: auto;
     }
   }
+
+/* The Modal (background) */
+.portfolio-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  box-sizing: border-box;
+  z-index: 5; /* Sit on top */
+  padding-top: 80px; /* Location of the box */
+  padding-bottom: 80px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+  .portfolio-modal-content{
+      padding: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: white;
+      margin: auto;
+      height: auto;
+      max-width: 60%;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+
+      img{
+        max-width: 50%;
+        border: 2px $theme-color solid;
+        border-radius: 10%;
+      }
+  }
+
+  .portfolio-modal-caption {
+    padding: 20px;
+    font-size: 1.1rem;
+    font-family: 'cwTeXYen', 'Indie Flower';
+  }
+
+  @keyframes zoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+  }
+
+  /* The Close Button */
+  .portfolio-modal-close-btn {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #bbb;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+  }
+
+  .portfolio-modal-close-btn:hover, .portfolio-modal-close-btn:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+}
   
 
 /* iPad (768px) */

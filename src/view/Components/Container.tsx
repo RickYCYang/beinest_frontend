@@ -15,7 +15,7 @@ const Container = (props: props) => {
     }
     return (
         <div className={`container-${align}`}>
-            <div style={{width: '100%', paddingTop: '30px'}}>
+            <div style={{width: '100%'}}>
                 {children}
             </div>
         </div>

@@ -1,16 +1,30 @@
 import { 
     GET_PORTFOLIO_FAIL,
-    GET_PORTFOLIO_SUCCESS
+    GET_PORTFOLIO_SUCCESS,
+    SET_PORTFOLIO_MODAL
  } from '../actionTypes';
-import {portfolioState, portfolio} from '../../interface/portfolioInterface';
+import {
+    portfolioState, 
+    portfolio,
+    portfolioModal
+} from '../../interface/portfolioInterface';
 
 interface action {
     type: string,
-    portfolioList: portfolio[]
+    portfolioList: portfolio[],
+    portfolioModal: portfolioModal
 }
 
 const initState: portfolioState = {
-    portfolioList: []
+    portfolioList: [],
+    portfolioModal: {
+        open: false,
+        caption: '',
+        mediaUrl: '',
+        mediaType: '',
+        likeCount: 0,
+        timestamp: ''
+    }
 }
 
 const portfolioReducer = (state = initState, action: action): portfolioState => {
@@ -19,8 +33,10 @@ const portfolioReducer = (state = initState, action: action): portfolioState => 
             return {...state};
         }
         case GET_PORTFOLIO_SUCCESS: {
-            console.log('action', action);
             return {...state, portfolioList: action.portfolioList};
+        }
+        case SET_PORTFOLIO_MODAL: {
+            return {...state, portfolioModal: action.portfolioModal}
         }
         default: return state;
     }

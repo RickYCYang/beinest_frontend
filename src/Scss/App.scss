@@ -3,6 +3,7 @@ $theme-font-color:  #FFA4C7;
 $topbar-height: 70px;
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import "~bootstrap/scss/bootstrap";
 @import '~@material/react-card/dist/card.css';
 @import './Portfolio.scss';
 @import './Footer.scss';
@@ -46,7 +47,7 @@ html{
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 800px;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
 }
 
 .container-center {
@@ -101,6 +102,28 @@ html{
 
 img {
   max-height: 100%;
+}
+
+.carousel-indicators {
+  margin: 0 auto;
+}
+
+
+h3, p{
+  font-family: 'cwTeXYen', 'Indie Flower';
+  z-index: 2;
+  color: black;
+}
+
+
+.carousel-indicators .active {
+  width: 30px;
+  height: 3px;
+}
+
+.separate-line {
+  border: 2px solid $theme-color;
+  width: 80%;
 }
 
 

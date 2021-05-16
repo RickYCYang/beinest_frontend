@@ -2,7 +2,8 @@ import React from 'react';
 
 import Container from '../Components/Container';
 import PortfolioCard from './Components/PortfolioCard';
-import {portfolioState, portfolio} from '../../interface/portfolioInterface'
+import {portfolioState, portfolio} from '../../interface/portfolioInterface';
+import PortfolioModal from './Components/PortfolioModal';
 
 interface propsType {
     category: string,
@@ -11,9 +12,8 @@ interface propsType {
 
 
 const PortfolioList = (props: propsType) => {
-    const category = props.category;
     const portfolioList = props.portfolioList;
-    
+
     const setPortfolioCardList = () => {
         return portfolioList.map((portfolio: portfolio) => {
             return (<PortfolioCard 
@@ -25,11 +25,14 @@ const PortfolioList = (props: propsType) => {
     };
 
     return (
-        <Container align={'center'}>
-            <div style={{width: '100%', height: '100%'}}>
-                {setPortfolioCardList()}
-            </div>
-        </Container>
+        <>
+            <Container align={'center'}>
+                <div style={{width: '100%', height: '100%', paddingTop: '20px'}}>
+                    {setPortfolioCardList()}
+                </div>
+            </Container>
+            <PortfolioModal/>
+        </>
     )
 }
 

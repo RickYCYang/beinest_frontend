@@ -1,21 +1,17 @@
 import React from 'react';
 import { Route, Switch } from 'react-router'; // react-router v4/v5
-import { ConnectedRouter } from 'connected-react-router';
-import About from '../About/About'
+import About from '../About/About';
+import Home from '../Home/Home';
 import PortfolioPage from '../Portfolio/PortfolioPage';
-import Portfolio from '../Portfolio/Portfolio';
 
 const Routes = () => {
     return (
         <Switch>
             <Route exact path="/">
-                <PortfolioPage /> 
+                <Home /> 
             </Route>
             <Route exact path="/portfolioCatg/:category">
                 <PortfolioPage /> 
-            </Route>
-            <Route exact path="/portfolio/:id">
-                <Portfolio /> 
             </Route>
             <Route exact path="/about">
                 <About /> 
