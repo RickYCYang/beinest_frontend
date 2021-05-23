@@ -26,8 +26,7 @@ const PortfolioModal = () => {
             <span className="portfolio-modal-close-btn" onClick={closeModal}>&times;</span>
             <div className="portfolio-modal-content">
                 <img src={mediaUrl} />
-                <div className="portfolio-modal-caption" dangerouslySetInnerHTML={{ __html: adjustCaption }}
-                />
+                <div className="portfolio-modal-caption" dangerouslySetInnerHTML={{ __html: adjustCaption }}/>
             </div>
         </div>
     );

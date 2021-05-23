@@ -8,9 +8,6 @@ const Home = () => {
   return (
     <>
         <CarouselBanner/>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <Logo/>
-        </div>
         <PortfolioPage showPostNumber={12}/>
         <hr className='separate-line' />
         <About/>
