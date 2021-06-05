@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux'
-import {OPEN_DRAWER} from '../../redux/actionTypes';
+import {OPEN_DRAWER} from '../../../redux/actionTypes';
 import MaterialIcon from '@material/react-material-icon';
 
 const DrawerButton = () => {

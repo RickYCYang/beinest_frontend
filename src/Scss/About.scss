@@ -1,82 +1,114 @@
+.about-container-main {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 800px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+
+.about-container-sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+
+  img {
+    display: block;
+  }
+}
+
 .about-content-info {
-    width: 48%;
-    margin: 0 1% 0 1%; //top right bottom left
-    padding-top: 20px;
-    min-height: 500px;
-    box-sizing: border-box;
-    border-radius: 50px;
-    border: 3px solid $theme-color;
-    background-color: white;
-    box-shadow:3px 3px 9px lightgray;
+  width: 48%;
+  margin: 0 1% 0 1%; //top right bottom left
+  padding-top: 20px;
+  min-height: 500px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 3px solid $theme-color;
+  background-color: white;
+  box-shadow:3px 3px 9px lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.4rem;
+
+
+  .title {
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    border-bottom: 2px solid $theme-color;
+  }
+
+  ul {
+    width: 90%;
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
-    align-items: center;
-    font-size: 1.4rem;
-    font-family: 'cwTeXYen', 'Indie Flower';
-  
-    .title {
-      font-weight: bold;
-      text-align: center;
-      width: 90%;
-      border-bottom: 2px solid $theme-color;
-    }
-  
-    ul {
-      width: 90%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
-      list-style: none;
-    }
-  
-    ul li::before {
-      content: "\2022";
-      color: $theme-font-color;
-      font-weight: bold;
-      display: inline-block; 
-      width: 1em;
-      margin-left: -1em;
-    }
-  
-    iframe {
-      border-radius: 10px;
-      border: 2px solid $theme-color;
-    }
+    flex-direction: column;
+    list-style: none;
   }
 
-  .about-logo {
-    background-color: white;
-    border-radius: 50%;
-    border-color: $theme-color;
-    border-style: solid;
-    box-shadow: 3px 3px 9px lightgray;
-    margin: 10px;
-    max-width: 100px;
+  ul li::before {
+    content: "\2022";
+    color: $theme-font-color;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  iframe {
+    border-radius: 10px;
+    border: 2px solid $theme-color;
+  }
+}
+
+.about-logo {
+  background-color: white;
+  border-radius: 50%;
+  border-color: $theme-color;
+  border-style: solid;
+  box-shadow: 3px 3px 9px lightgray;
+  margin: 10px;
+  max-width: 100px;
+  max-height: auto;
+
+  img {
+    max-width: 100%;
     max-height: auto;
-
-    img {
-      max-width: 100%;
-      max-height: auto;
-    }
   }
+}
 
   /* iPad (768px) */
-@media (max-width: 768px) {
+@media (max-width: $ipad-width) {
 
-    .about-content-info {
-      width: 98%;
-      margin: 1%;
-    }
+  .about-container-sub {
+    flex-direction: column;
+  }
 
-    .about-content-info {
-        min-height: 370px;
-        margin-bottom: 2%;
+  .about-content-info {
+    width: 98%;
+    margin: 1%;
+    font-size: 1rem;
+    min-height: 370px;
+    margin-bottom: 2%;
+
+    iframe{
+      max-height: 200px;
     }
-    
-    #about-address {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+  }
+  
+  #about-address {
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+
 }

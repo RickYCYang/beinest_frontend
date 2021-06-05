@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useParams} from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import PortfolioList from './PortfolioList';
@@ -21,16 +21,22 @@ const PortfolioPage = (props: PropsTypes) => {
     const portfolioList: portfolioState["portfolioList"] = useSelector((state: stateInterface) => state.portfolioReducer.portfolioList);
     
     let filterPortolioList = [];
-    if(category === 'acne'){
-        filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') > 0)
+
+    switch(category){
+        case 'acne': {
+            filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') > 0)
+            break;
+        }
+        case 'all': {
+            filterPortolioList = portfolioList;
+            break;
+        }
+        default: {
+            filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') < 0);
+            break;
+        }
     }
-    else if(category ==='all'){
-        filterPortolioList = portfolioList;
-    }
-    else {
-        filterPortolioList = portfolioList.filter(portfolio => portfolio.caption.indexOf('無痛粉刺') < 0)
-    }
-    console.log('showPostNumber', showPostNumber);
+    
     if(showPostNumber !== undefined && showPostNumber > 0){
         filterPortolioList = filterPortolioList.slice(0, 8)
     }
@@ -41,8 +47,8 @@ const PortfolioPage = (props: PropsTypes) => {
       
     return(
         <PortfolioList 
-            category = {category}
             portfolioList = {filterPortolioList}
+            category = {category}
         />
     );
 }

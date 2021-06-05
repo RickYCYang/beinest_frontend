@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
-import { OPEN_DRAWER } from '../../redux/actionTypes';
-import { stateInterface } from '../../interface/stateInterface';
+import { OPEN_DRAWER } from '../../../redux/actionTypes';
+import { stateInterface } from '../../../interface/stateInterface';
 
-import SocialLinkMenu from '../Components/SocialLinkMenu'
+import SocialLinkMenu from '../../Components/SocialLinkMenu'
 
 const DrawerMenu = () => {
     const dispatch = useDispatch();

@@ -1,6 +1,9 @@
 $theme-color:#FDE3E7;
 $theme-font-color:  #FFA4C7;
 $topbar-height: 70px;
+$ipad-width: 768px;
+$phone-width: 500px;
+
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import "~bootstrap/scss/bootstrap";
@@ -15,17 +18,19 @@ $topbar-height: 70px;
   font-family: 'cwTeXYen';
   font-style: normal;
   font-weight: 500;
-  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot);
-  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix) format('embedded-opentype'),
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot),
+       url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix) format('embedded-opentype'),
        url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff2) format('woff2'),
        url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff) format('woff'),
        url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.ttf) format('truetype');
 }
 @import '~@material/react-material-icon/dist/material-icon.css';
 
-$theme-color:#FDE3E7;
-$theme-font-color:  #FFA4C7;
-$topbar-height: 70px;
+
+
+* {
+  font-family: 'cwTeXYen', 'Indie Flower';
+}
 
 .material-icons{
   color: $theme-color;
@@ -34,6 +39,7 @@ $topbar-height: 70px;
 
 html{
   font-size:16px;
+  
   body{
     background-color: #F9F9F9;
   }
@@ -52,20 +58,6 @@ html{
 
 .container-center {
   @include container(center);
-}
-
-
-
-.flex-container-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-
-  img {
-    display: block;
-  }
 }
 
 .flex-container-row {
@@ -109,10 +101,13 @@ img {
 }
 
 
-.carousel-caption h3, .carousel-caption p{
-  font-family: 'cwTeXYen', 'Indie Flower';
-  z-index: 2;
+.carousel-caption, .carousel-caption{
+  z-index: 1;
   color: white;
+}
+
+.carousel-indicators {
+  z-index: 1;
 }
 
 

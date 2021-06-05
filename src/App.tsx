@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './redux/configureStore';
 
 import Routes from './view/Components/Routes';
-import Drawer from './view/Components/Drawer';
+import Drawer from './view/Drawer/Drawer';
 import Footer from './view/Components/Footer';
 import Topbar from './view/Topbar/Topbar';
 

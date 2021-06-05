@@ -1,36 +1,38 @@
 import React from 'react';
 
-import Container from '../Components/Container';
 import PortfolioCard from './Components/PortfolioCard';
 import {portfolioState, portfolio} from '../../interface/portfolioInterface';
 import PortfolioModal from './Components/PortfolioModal';
 
 interface propsType {
-    category: string,
-    portfolioList: portfolioState['portfolioList']
+    portfolioList: portfolioState['portfolioList'],
+    category?: string
 };
 
-
 const PortfolioList = (props: propsType) => {
-    const portfolioList = props.portfolioList;
-
+    const {category, portfolioList} = props;
     const setPortfolioCardList = () => {
         return portfolioList.map((portfolio: portfolio) => {
             return (<PortfolioCard 
-                         key={portfolio.id} 
-                         portfolio={portfolio}
-                     />
-                   );
+                        key={portfolio.id} 
+                        portfolio={portfolio}
+                    />
+                    );
         });
     };
 
+    const paddingBottomOffset = (category === null || category === undefined)? '0': '100px';
+
     return (
         <>
-            <Container align={'center'}>
-                <div style={{width: '100%', height: '100%', paddingTop: '20px'}}>
+            <div className='portfolio-container'>
+                <div 
+                    className='portfolio-list'
+                    style={{paddingBottom: paddingBottomOffset}}
+                >
                     {setPortfolioCardList()}
                 </div>
-            </Container>
+            </div>
             <PortfolioModal/>
         </>
     )

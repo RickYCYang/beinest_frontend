@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { stateInterface } from '../../interface/stateInterface';
-
-import DrawerMenu from '../Topbar/DrawerMenu';
+import DrawerMenu from './Components/DrawerMenu';
 
 const Drawer = () => {
     const openDrawer = useSelector((state: stateInterface) => state.topbarReducer.openDrawer);

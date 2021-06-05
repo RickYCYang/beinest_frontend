@@ -4,7 +4,7 @@ import {SET_PORTFOLIO_MODAL} from '../../../redux/actionTypes'
 import Card, {
     CardPrimaryContent,
     CardMedia
-  } from "@material/react-card";
+} from "@material/react-card";
 
 import  {portfolio} from '../../../interface/portfolioInterface';
 
@@ -17,7 +17,6 @@ const PortfolioCard = (props: propsType) => {
     const {portfolio} = props;
 
     const openPortfolioModal = useCallback(() => {
-        console.log('Open Modal', portfolio);
         dispatch({
             type: SET_PORTFOLIO_MODAL,
             portfolioModal: {
@@ -35,17 +34,20 @@ const PortfolioCard = (props: propsType) => {
     <div className='portfolio-card' onClick={openPortfolioModal}>        
         <Card>
             <CardPrimaryContent>
-                {portfolio.mediaType === 'IMAGE' || portfolio.mediaType === 'CAROUSEL_ALBUM' ? (
-                    <CardMedia 
-                        square 
-                        imageUrl={portfolio.mediaUrl} 
-                    />   
-                ):(
-                    <iframe 
-                        src={portfolio.mediaUrl} 
-                        style={{height: '300px', backgroundColor: 'white'}}
-                    />
-                )
+                {
+                    portfolio.mediaType === 'IMAGE' || portfolio.mediaType === 'CAROUSEL_ALBUM' ? 
+                    (
+                        <CardMedia 
+                            square 
+                            imageUrl={portfolio.mediaUrl} 
+                        />   
+                    ):
+                    (  
+                        <video controls  className='mdc-card__media' >
+                        <source src={portfolio.mediaUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                        </video>
+                    )
                 }
                 
             </CardPrimaryContent>
