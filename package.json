@@ -47,7 +47,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:watch": "jest --watch",
+    "eject": "react-scripts eject",
+    "lint": "if standard | snazzy; then echo '💯 Lint perfect'; else echo '⁉️ Lint get error please run `npm run lint` check again';exit 1; fi"
   },
   "eslintConfig": {
     "extends": [

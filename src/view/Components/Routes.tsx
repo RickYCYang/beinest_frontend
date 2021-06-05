@@ -14,7 +14,7 @@ const Routes = () => {
                 <PortfolioPage /> 
             </Route>
             <Route exact path="/about">
-                <About /> 
+                <About showLogo={true}/> 
             </Route>
             <Route exact path="*">
                 <div>

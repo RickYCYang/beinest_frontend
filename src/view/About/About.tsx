@@ -4,12 +4,16 @@ import MapContent from './Components/MapContent'
 import Content from './Components/Content';
 import Logo from './Components/Logo'
 
-const About = () => {
-    console.log('render about');
+interface propsType {
+    showLogo: boolean | null
+}
+
+const About = (props: propsType) => {
+    const showLogo: boolean | null = props.showLogo;
     return (
         <Container align={'center'}>
             <div className='flex-container-column' style={{paddingTop: '10px'}}>
-                <Logo/>
+                {showLogo? <Logo/> : null}
                 <div className='container-content-center'>
                     <Content />
                     <MapContent />

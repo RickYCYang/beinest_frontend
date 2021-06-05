@@ -1,6 +1,8 @@
 import axios, {AxiosRequestConfig} from 'axios';
+const DEV_SERVER_HOST = 'http://localhost:3000';
+const PROD_SERVER_HOST = 'https://beisnest.herokuapp.com/';
 
-const serverHostName = 'http://localhost:3000';
+const serverHostName = PROD_SERVER_HOST
 
 axios.defaults.baseURL = serverHostName;
 axios.defaults.headers['Accept'] = 'application/json';
